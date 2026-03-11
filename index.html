@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسوعة أيهم العلمية الشاملة 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37; --space: #05070a; --ocean: #001219; --paper: #fdfcf8; --ink: #1a1a1a;
+        }
+
+        body {
+            margin: 0; padding: 0; font-family: 'Amiri', serif;
+            background-color: var(--space); color: var(--paper);
+            transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); overflow-x: hidden;
+        }
+
+        /* Nav Header */
+        .top-nav {
+            position: fixed; top: 0; width: 100%; display: flex; z-index: 1000;
+            background: rgba(0,0,0,0.9); border-bottom: 2px solid var(--gold);
+        }
+
+        .nav-btn {
+            flex: 1; padding: 20px; border: none; background: transparent;
+            color: var(--gold); font-family: 'Aref Ruqaa'; font-size: 1.5rem; cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-btn.active { background: var(--gold); color: black; }
+
+        /* Main Layout */
+        .container { padding: 120px 20px 60px; max-width: 1100px; margin: auto; }
+        .section-view { display: none; animation: fadeIn 0.8s forwards; }
+        .active-view { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .paper-content {
+            background: var(--paper); color: var(--ink); padding: 50px;
+            border-radius: 4px; box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+            border-right: 12px solid var(--gold);
+        }
+
+        h2 { font-family: 'Aref Ruqaa'; font-size: 2.8rem; color: #003049; margin-top: 0; }
+        .deep-text { font-size: 1.3rem; line-height: 2; text-align: justify; }
+
+        .milestone { border-bottom: 2px dashed #ccc; padding: 30px 0; }
+        .year-tag { background: var(--space); color: var(--gold); padding: 4px 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; }
+
+        .tech-data {
+            background: #f0f4f8; border-left: 5px solid #0077b6;
+            padding: 20px; margin: 20px 0; font-style: italic; font-size: 1.1rem;
+        }
+
+        /* THE INTELLIGENT CHATBOT */
+        #bot-container { position: fixed; bottom: 25px; left: 25px; z-index: 9999; }
+        #chat-window {
+            width: 360px; height: 500px; background: white; border: 3px solid var(--gold);
+            display: none; flex-direction: column; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        #chat-header { background: var(--gold); padding: 15px; font-weight: bold; color: black; text-align: center; font-family: 'Aref Ruqaa'; }
+        #messages { flex: 1; padding: 15px; overflow-y: auto; color: #333; font-size: 1rem; background: #fdfdfd; }
+        #input-area { display: flex; border-top: 1px solid #ddd; }
+        #chat-input { flex: 1; border: none; padding: 15px; outline: none; font-family: 'Amiri'; font-size: 1.1rem; }
+
+        .user-msg { text-align: left; margin: 10px 0; }
+        .user-msg span { background: #0077b6; color: white; padding: 8px 12px; border-radius: 12px; display: inline-block; }
+        .ai-msg { background: #eee; padding: 10px; border-radius: 10px; margin: 10px 0; border-right: 4px solid var(--gold); }
+
+        footer { background: #000; color: var(--gold); text-align: center; padding: 40px; border-top: 4px solid var(--gold); font-family: 'Aref Ruqaa'; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">
+    <button class="nav-btn active" onclick="toggle('space', this)">🚀 أرشيف الفضاء</button>
+    <button class="nav-btn" onclick="toggle('ocean', this)">🌊 أرشيف المحيطات</button>
+</div>
+
+<div class="container">
+    
+    <div id="space-view" class="section-view active-view">
+        <div class="paper-content">
+            <h2>موسوعة الفضاء: التاريخ والفيزياء (1800 - 2026)</h2>
+            <p class="deep-text">لقد بدأ استكشاف الفضاء قبل المحركات النفاثة بقرون، حيث اعتمد العلماء على الرياضيات البحتة لرسم خرائط الأجرام السماوية التي لم يروها قط.</p>
+            
+            <div class="milestone">
+                <span class="year-tag">1800 - 1890: عصر البصريات</span>
+                <p class="deep-text">شهد هذا القرن أولى محاولات فهم الكون عبر التصوير. في 1840، نجح جون دريبر في التقاط أول صورة للقمر. وبحلول 1846، أثبتت الرياضيات وجود كوكب نبتون عبر حسابات الجاذبية، مما أكد أن القوانين الفيزيائية للأرض تنطبق على الكون أجمع.</p>
+            </div>
+
+            <div class="milestone">
+                <span class="year-tag">1961 - 1977: الخروج عن الجاذبية</span>
+                <p class="deep-text">منذ انطلاق يوري غاغارين (1961) إلى هبوط أبولو 11 (1969)، كانت التكنولوجيا تتسارع بجنون. محرك Saturn V كان يولد طاقة تعادل 85 مفاعلاً نووياً عند الإقلاع. في 1977، انطلق "فوييجر 1" الذي يحمل الآن تحيات عربية موجهة لأي حضارة فضائية خارج نظامنا الشمسي.</p>
+                <div class="tech-data"><b>بيانات تقنية:</b> يبعد مسبار فوييجر الآن أكثر من 24 مليار كم، وتستغرق الإشارة منه 22 ساعة ضوئية لتصل للأرض.</div>
+            </div>
+
+            <div class="milestone">
+                <span class="year-tag">2026: بوابة المريخ</span>
+                <p class="deep-text">في مارس 2026، نحن نشهد عصر تلسكوب جيمس ويب الذي يرصد الضوء من أولى لحظات الانفجار العظيم. كما بدأت ناسا وشركاؤها بناء محطة "بوابة القمر" (Lunar Gateway) لتكون أول مستعمرة بشرية مدارية خارج الأرض، مما يمهد الطريق لرحلة المريخ 2030.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="ocean-view" class="section-view">
+        <div class="paper-content" style="border-right-color: #0077b6;">
+            <h2 style="color: #003049;">موسوعة الأعماق: فيزياء الهاوية (1800 - 2026)</h2>
+            <p class="deep-text">المحيط هو الحدود الأخيرة على كوكبنا. الضغط الهائل في الأعماق جعل الوصول إليها أصعب من الوصول إلى القمر.</p>
+
+            <div class="milestone">
+                <span class="year-tag">1819 - 1872: فجر الاستكشاف</span>
+                <p class="deep-text">اختراع "سيبي" لخوذة الغوص المتصلة بمضخة هوائية (1837) سمح للبشر بمواجهة الضغط المائي لأول مرة. انطلقت بعثة "تشالنجر" (1872) لتقطع 127 ألف كم، مكتشفةً جبالاً تحت الماء وخنادق لم يتخيلها أحد، مما وضع حجر الأساس لعلم المحيطات الحديث.</p>
+            </div>
+
+            <div class="milestone">
+                <span class="year-tag">1960 - 2012: قهر الضغط</span>
+                <p class="deep-text">في 1960، وصلت الغواصة "تريست" لعمق 11 كم في خندق ماريانا. عند هذا العمق، يكون الضغط قادراً على سحق أقوى الفولاذ. اكتشف المستكشفون أن الحياة تزدهر حتى في الظلام الدامس عبر التمثيل الكيميائي.</p>
+                <div class="tech-data"><b>فيزياء السوائل:</b> الضغط يزداد بمقدار 1 ضغط جوي لكل 10 أمتار نزولاً. في القاع، الضغط يعادل فيلاً يقف على طرف إصبعك.</div>
+            </div>
+
+            <div class="milestone">
+                <span class="year-tag">2026: الروبوتات الذكية</span>
+                <p class="deep-text">في عام 2026، دخلنا عصر الغواصات المسيرة (AUVs) التي تستخدم الذكاء الاصطناعي لرسم خرائط "نطاق الهادال". نكتشف اليوم كائنات تعيش في فوهات بركانية بحرية تصل حرارتها لـ 400 درجة مئوية، وهو ما يغير فهمنا لكيفية نشوء الحياة في الكون.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bot-container">
+    <div id="chat-window">
+        <div id="chat-header">وحدة الذكاء العلمي: أيهم AI</div>
+        <div id="messages">
+            <div class="ai-msg">أهلاً بك في نظام أيهم للتحليل الفيزيائي. <br>يمكنني حساب <b>الضغط</b> في الأعماق، أو <b>وزنك</b> على الكواكب، أو بيانات <b>2026</b>. جربني!</div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="chat-input" placeholder="أدخل بيانات فيزيائية...">
+            <button onclick="aiProcess()" style="padding:15px; background:var(--gold); border:none; cursor:pointer; font-weight:bold;">تحليل</button>
+        </div>
+    </div>
+    <div onclick="toggleChat()" style="width:70px; height:70px; background:var(--gold); border-radius:50%; display:flex; justify-content:center; align-items:center; cursor:pointer; font-size:35px; box-shadow:0 10px 30px rgba(0,0,0,0.5); border:3px solid white;">🧠</div>
+</div>
+
+<footer>
+    حقوق الطبع والنشر © 2026 | موسوعة أيهم العلمية للمخترعين<br>
+    "لا حدود للمعرفة.. من النجوم إلى الهاوية"
+</footer>
+
+<script>
+    // System Toggle
+    function toggle(view, btn) {
+        document.querySelectorAll('.section-view').forEach(v => v.classList.remove('active-view'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(view + '-view').classList.add('active-view');
+        btn.classList.add('active');
+        document.body.style.backgroundColor = (view === 'space') ? 'var(--space)' : 'var(--ocean)';
+        window.scrollTo(0,0);
+    }
+
+    // Chat Logic
+    function toggleChat() {
+        const win = document.getElementById('chat-window');
+        win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    function aiProcess() {
+        const input = document.getElementById('chat-input');
+        const box = document.getElementById('messages');
+        const query = input.value.trim().toLowerCase();
+        if(!query) return;
+
+        box.innerHTML += `<div class="user-msg"><span>${input.value}</span></div>`;
+        
+        let ans = "أنا نظام ذكاء اصطناعي مخصص للفيزياء. جرب كتابة 'وزني 80' أو 'ضغط عمق 1000' أو 'سنة 2026'.";
+        
+        // Logical Analysis
+        if(query.includes("عمق") || query.includes("ضغط")) {
+            let d = parseInt(query.replace(/\D/g,'')) || 1000;
+            let atm = (d / 10) + 1;
+            ans = `عند عمق <b>${d} متر</b>، الضغط هو <b>${atm} ضغط جوي</b>. هذا الضغط كفيل بتحطيم العظام البشرية فوراً.`;
+        } 
+        else if(query.includes("وزن") || query.includes("كجم")) {
+            let w = parseInt(query.replace(/\D/g,'')) || 70;
+            let g = query.includes("مريخ") ? 0.38 : (query.includes("قمر") ? 0.16 : 1);
+            let target = query.includes("قمر") ? "القمر" : "المريخ";
+            ans = `وزنك <b>${w} كجم</b> على الأرض سيصبح <b>${(w*g).toFixed(1)} كجم</b> على ${target} بسبب اختلاف الجاذبية.`;
+        }
+        else if(query.includes("2026")) {
+            ans = "في عام 2026، يتم بناء 'بوابة القمر' واستخدام روبوتات الـ AI لرسم خرائط الهاوية البحرية بنسبة 80%.";
+        }
+
+        setTimeout(() => {
+            box.innerHTML += `<div class="ai-msg"><b>أيهم AI:</b> ${ans}</div>`;
+            box.scrollTop = box.scrollHeight;
+        }, 500);
+        input.value = "";
+    }
+</script>
+
+</body>
+</html>
